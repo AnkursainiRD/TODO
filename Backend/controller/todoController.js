@@ -38,8 +38,8 @@ const createTodo=asyncHandler(async(req,res)=>{
 //Update todo controller
 const updateTodo=asyncHandler(async(req,res)=>{
     //Fetching todo id from url
-    const todoId=req.params.id
-    console.log("workiiiimg");
+    const todoId=req.query.id
+  
     const {title,description,completed,dueDate}=req.body
     if(!title || !description || !completed || !dueDate){
         throw res.json(new apiError(404,"All Fileds Are Required"))
@@ -60,8 +60,9 @@ const updateTodo=asyncHandler(async(req,res)=>{
 //Delete todo controller
 const deleteTodo=asyncHandler(async(req,res)=>{
      //Fetching todo id from url
-     const todoId=req.params.id
+     const todoId=req.query.id
      //Checking if todo id is not present
+     console.log("workiiiimg",req.query.id);
     if(!todoId){
         throw res.json(new apiError(404,"Invlaid Todo Id"))
     }

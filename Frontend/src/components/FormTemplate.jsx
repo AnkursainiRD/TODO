@@ -4,7 +4,7 @@ import { createTodo, updateTodo } from '../services/operations/todoApi';
 import { useDispatch } from 'react-redux';
 import {useNavigate} from 'react-router-dom'
 
-function FormTemplate({heading, completed=null,description,title,dueDate}) {
+function FormTemplate({id,heading, completed=null,description,title,dueDate}) {
     // console.log(completed,description,title,dueDate);
     const {register,handleSubmit,formState:{errors}}=useForm()
     const [toggle,setToggle]=useState(completed)
@@ -17,7 +17,7 @@ function FormTemplate({heading, completed=null,description,title,dueDate}) {
              createTodo(dispatch,navigate,data)}
         else{
             console.log(data);
-            updateTodo(dispatch,navigate,data)
+            updateTodo(dispatch,navigate,data,id)
         }
     }
   return (

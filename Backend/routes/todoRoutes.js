@@ -7,9 +7,9 @@ router.route("/getAllTodos").get(getAllTodos)
 //This route for create the todo
 router.route("/createTodo").post(createTodo)
 //This route for update todo
-router.route("/updateTodo/:id").patch(updateTodo)
+router.route("/updateTodo").patch(updateTodo)
 //This route for delete todo
-router.route("/deleteTodo/:id").delete(deleteTodo)
+router.route("/deleteTodo").delete(deleteTodo)
 //This route for get all completed todos
 router.route("/completedTodo").get(completedTodo)
 

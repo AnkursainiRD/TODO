@@ -15,9 +15,9 @@ function UpdateTodoPage() {
   console.log(filterData[0]);
   return (
     <div>
-        <FormTemplate heading="Update Todo" title={filterData[0].title} description={filterData[0]?.description} completed={filterData[0]?.completed} dueDate={filterData[0]?.dueDate} />
+        <FormTemplate heading="Update Todo" id={id} title={filterData[0].title} description={filterData[0]?.description} completed={filterData[0]?.completed} dueDate={filterData[0]?.dueDate} />
     </div>
-  )
+  ) 
 }
 
 export default UpdateTodoPage
